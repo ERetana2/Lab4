@@ -42,7 +42,7 @@ def treeToList(t):
         return []
     #iterate through the left side of the tree and add a list containing [t.data]
     # then iterate through the right side of the tree
-    return treeToList(t.left) + [t.data]+ treeToList(t.right)
+    return  treeToList(t.left) + [t.data] + treeToList(t.right)
 
 if __name__ == "__main__":
 
