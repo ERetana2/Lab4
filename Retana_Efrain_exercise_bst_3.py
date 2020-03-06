@@ -42,7 +42,7 @@ def atDepth(t,d):
         return [t.data]
     else:
         # iterate through left side and right side
-        return atDepth(t.left,d-1) + atDepth(t.right,d-1)
+        return atDepth(t.left,d-1) + atDepth(t.right,d-1)  
 
 def depthOfK(t,k):
     # return the depth of the node that contains K
