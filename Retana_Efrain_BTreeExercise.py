@@ -3,25 +3,38 @@ import numpy as np
 import btree
 # finds the smallest number in the tree
 def smallest(T):
-    if T.root.is_leaf:
+    if T.root.is_leaf: # base case that returns smallest element if root is leaf node
         return T.root.data[0]
     temp = T.root
+    # iter to the leftmost part of the tree
     while not temp.is_leaf:
         temp = temp.child[0]
     return temp.data[0]
 # finds the largest number in the tree
 def largest(T):
-    if T.root.is_leaf:
+    if T.root.is_leaf: # return the last element in the root list if it is leaf node
         return T.root.data[-1]
     temp = T.root
+    #iter through the right most part of the tree
     while not temp.is_leaf:
         temp = temp.child[-1]
     return temp.data[-1]
 
 def numItems(T):
-    if T.root.is_leaf:
-        return len(T.root.data)
-    for i in range(len())
+    #iterate through items using the root
+    return recur_numItems(T.root)
+
+def recur_numItems(T): # wrapper function for numItems
+    currNum = 0
+    # base case when t is a leaf node
+    if T.is_leaf:
+        return len(T.data)
+    
+    for i in range(len(T.child)):
+        currNum += recur_numItems(T.child[i])
+    currNum += len(T.data)
+    
+    return currNum
 
 if __name__ == "__main__":
     plt.close('all')
