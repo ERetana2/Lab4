@@ -51,7 +51,7 @@ def maximum(T):
 #PROBLEM 4
 def height(T):
     if T is None:
-        return
+        return -1
     left_tree = 1 + height(T[1])
     right_tree = 1 + height(T[2])
     
@@ -75,6 +75,19 @@ def inTree(T,i):
 def printByLevel(T):
     if T is None:
         return
+    L = []
+    L.append(T)
+    
+    while len(L) > 0:
+        for i in range(len(L)):
+            currList = L.pop(0)
+            print(currList[0],end=' ')
+            
+            if currList[1] is not None:
+                L.append(currList[1])
+            if currList[2] is not None:
+                L.append(currList[2])
+        print()
 #---------------------------------
 #PROBLEM 7
 def tree2List(T):
@@ -105,11 +118,30 @@ def depthOfK(T,k):
     if T is None:
         return -1
     if T[0] == k:
-        return 0
+        return 0W
     if k < T[0]:
         return 1 + depthOfK(T[1],k)
     elif k >= T[0]:
         return 1 + depthOfK(T[2],k)
+#    found = False
+#    L = []
+#    L.append(T)
+#    counter = 0
+#    while len(L) > 0:
+#        counter += 1
+#        for i in range(len(L)):
+#            currList = L.pop(0)
+#            if currList[0] == k:
+#                found = True
+#                break
+#            if currList[1] is not None:
+#                L.append(currList[1])
+#            if currList[2] is not None:
+#                L.append(currList[2])
+        
+    if not found:
+        return -1
+    return counter
 #-----------------------------------------------------------------
 #PROBLEM 11
 def draw(T,ax,x0=0,y0=0,delta_x=1000,delta_y=120):
@@ -141,7 +173,7 @@ if __name__ == "__main__":
     leaves(T)
     print()
     print(itemsAtDepthD(T,3))
-    print(depthOfK(T,0))
+    print(depthOfK(T,15))
     plt.close('all')
     fig,ax = plt.subplots()
     draw(T,ax)
