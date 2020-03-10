@@ -115,30 +115,19 @@ def itemsAtDepthD(T,d):
 #--------------------------------------------------
 #PROBLEM 10
 def depthOfK(T,k):
-    if T is None:
-        return -1
-    if T[0] == k:
-        return 0W
-    if k < T[0]:
-        return 1 + depthOfK(T[1],k)
-    elif k >= T[0]:
-        return 1 + depthOfK(T[2],k)
-#    found = False
-#    L = []
-#    L.append(T)
-#    counter = 0
-#    while len(L) > 0:
-#        counter += 1
-#        for i in range(len(L)):
-#            currList = L.pop(0)
-#            if currList[0] == k:
-#                found = True
-#                break
-#            if currList[1] is not None:
-#                L.append(currList[1])
-#            if currList[2] is not None:
-#                L.append(currList[2])
-        
+    counter,temp = 0,T
+    found = False
+    
+    while temp is not None:
+        if temp[0] < k:
+            temp = temp[2]
+            counter += 1
+        elif temp[0] > k:
+            temp = temp[1]
+            counter += 1
+        else:
+            found = True
+            return counter
     if not found:
         return -1
     return counter
@@ -173,7 +162,7 @@ if __name__ == "__main__":
     leaves(T)
     print()
     print(itemsAtDepthD(T,3))
-    print(depthOfK(T,15))
+    print(depthOfK(T,16))
     plt.close('all')
     fig,ax = plt.subplots()
     draw(T,ax)
