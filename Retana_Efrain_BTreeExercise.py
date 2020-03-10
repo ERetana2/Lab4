@@ -3,6 +3,8 @@ import numpy as np
 import btree
 # finds the smallest number in the tree
 def smallest(T):
+    if T.root.data == [] and T.root.is_leaf:
+        return -1
     if T.root.is_leaf: # base case that returns smallest element if root is leaf node
         return T.root.data[0]
     temp = T.root
@@ -12,6 +14,8 @@ def smallest(T):
     return temp.data[0]
 # finds the largest number in the tree
 def largest(T):
+    if T.root.data == [] and T.root.is_leaf:
+        return -1
     if T.root.is_leaf: # return the last element in the root list if it is leaf node
         return T.root.data[-1]
     temp = T.root
@@ -21,6 +25,8 @@ def largest(T):
     return temp.data[-1]
 
 def numItems(T):
+    if T.root.data == [] and T.root.is_leaf:
+        return -1
     #iterate through items using the root
     return recur_numItems(T.root)
 
@@ -45,6 +51,7 @@ if __name__ == "__main__":
   
     for num in nums:
         T.insert(num)
+        
     T.draw()
 
     print(smallest(T))  # 1
