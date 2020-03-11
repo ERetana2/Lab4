@@ -26,7 +26,7 @@ def largest(T):
 
 def numItems(T):
     if T.root.data == [] and T.root.is_leaf:
-        return -1
+        return 0
     #iterate through items using the root
     return recur_numItems(T.root)
 
