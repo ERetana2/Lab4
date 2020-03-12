@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 class BTreeNode:
     # Constructor
-    def __init__(self, data=[], child=[], is_leaf=True, max_items=5):
+    def __init__(self, data, child=[], is_leaf=True, max_items=5):
         self.data = data
         self.child = child
         self.is_leaf = is_leaf
@@ -18,7 +18,7 @@ class BTree:
     # Constructor
     def __init__(self, max_items=5):
         self.max_items = max_items # Maximum number of keys allowed in a node
-        self.root = BTreeNode(max_items=max_items)
+        self.root = BTreeNode(data=[],max_items=max_items)
 
     def find_child(self, k, node=None):
         # Determines value of c, such that k must be in subtree node.child[c], if k is in the BTree
@@ -153,11 +153,10 @@ class BTree:
         self._set_x(dx)
         # plt.close('all')
         fig, ax = plt.subplots()
-        self._draw_btree(dx, 0, 30, 10, ax)
+        self._draw_btree(dx, 0, 30, 12, ax)
         ax.set_aspect(1.0)
         ax.axis('off')
         plt.show()
-
 
 
 
