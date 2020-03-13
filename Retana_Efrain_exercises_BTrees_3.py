@@ -79,14 +79,23 @@ def fullNodesAtDepthD(t,d):
     return count
 
 def printDescending(t):
+    l = printDescending_n(t)
+    for i in range(1,len(l)+1):
+        print(l[-i],end= ' ')
+        
+def printDescending_n(t):
     if type(t) == btree.BTree:
         t = t.root
+    tempL = []
     if t.is_leaf:
-        return
+        tempL.extend(t.data)
+        return tempL
     for i in range(len(t.child)):
-        printDescending(t.child[-i])
-    for num in t.data:
-        print(num,end = ' ')
+        tempL.extend(printDescending_n(t.child[i]))
+        if i != len(t.child) - 1:
+            tempL.append(t.data[i])
+    return tempL
+            
 
 def printItemsInNode(t,k):
     if type(t) == btree.BTree:
