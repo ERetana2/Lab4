@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+
 """
 @author: Efrain Retana
 @Professor: Olac Fuentes 
@@ -7,6 +7,7 @@
 # Implementation of binary search trees using lists
 import matplotlib.pyplot as plt
 import numpy as np
+import time
 
 def insert(T,newItem): # Insert newItem to BST T
     if T == None:  # T is empty
@@ -163,7 +164,7 @@ def draw(T,ax,x0=0,y0=0,delta_x=1000,delta_y=120):
     
 if __name__ == "__main__":
     plt.close('all')
-    A =[11, 6, 7, 16, 17, 2, 4, 18, 14, 8, 15, 1, 20, 13]        
+    A = np.random.randint(1,1001,200)     
     B =[3,5,6,4,2,1,0]       
     T = None
     T2 = None
@@ -177,65 +178,99 @@ if __name__ == "__main__":
         T2 = insert(T2,b)   
     inOrder(T)
     print()
+    print()
     
-    print(size(T)) # 14
+    start_time = time.time()
+    print(size(T)) # 
+    end_time = time.time()
+    print('Total Time:', end_time - start_time)
     print(size(T2)) # 7
     print(size(T_empty)) # 0
     print()
     
-    print(maximum(T)) # 20
+    start_time = time.time()
+    print(maximum(T)) # 
+    end_time = time.time()
+    print('Total Time:', end_time - start_time)
     print(maximum(T2)) # 6
     print(maximum(T_empty)) # None
     print()
     
-    print(minimum(T)) # 1
+    start_time = time.time()
+    print(minimum(T)) # 
+    end_time = time.time()
+    print('Total Time:', end_time - start_time)
     print(minimum(T2)) # 0
     print(minimum(T_empty)) # None
     print()
     
-    print(height(T))# 4
+    start_time = time.time()
+    print(height(T))# 
+    end_time = time.time()
+    print('Total Time:', end_time - start_time)
     print(height(T2)) # 3
     print(height(T_empty)) # -1
+    print()
     
-    
-    print(inTree(T,8)) # True
+    start_time = time.time()
+    print(inTree(T,8)) # 
+    end_time = time.time()
+    print('Total Time:', end_time - start_time)
     print(inTree(T,0))  # False
     print(inTree(T2,1)) # True
     print(inTree(T_empty,14)) # False
     print()
     
+    start_time = time.time()
     printByLevel(T)
     print()
+    end_time = time.time()
+    print('Total Time:', end_time - start_time)
     printByLevel(T2)
     print()
     
-    print(tree2List(T)) # [1 2 4 6 7 8 11 13 14 15 16 17 18 20]
+    start_time = time.time()
+    print(tree2List(T)) # [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15....,49]
+    end_time = time.time()
+    print('Total Time:', end_time - start_time)
     print(tree2List(T2)) # [0 1 2 3 4 5 6]
     print(tree2List(T_empty)) # []
     print()
     
-    leaves(T) # 1 4 8 13 15 20
+    start_time = time.time()
+    leaves(T) # 0 4 7 10 13 15 18 21 24 28 31 33 35 39 41 43 45 49 
     print()
+    end_time = time.time()
+    print('Total Time:', end_time - start_time)
     leaves(T2) # 0 4 6
     print()
     leaves(T_empty)
     print()
     
-    print(itemsAtDepthD(T,3)) # [1 4 8 13 15 18]
-    print(itemsAtDepthD(T,2)) # [2 7 14 17]
-    print(itemsAtDepthD(T2,1)) # [6 16]
-    print(itemsAtDepthD(T2,0)) # [11]
+    start_time = time.time()
+    print(itemsAtDepthD(T,3)) # [0,3,6,9,25,34,46]
+    end_time = time.time()
+    print('Total Time:', end_time - start_time)
+    print(itemsAtDepthD(T,2)) # [1,5,19,42]
+    print(itemsAtDepthD(T2,1)) # [2,5]
+    print(itemsAtDepthD(T2,0)) # [3]
     print(itemsAtDepthD(T_empty,5)) # []
     print()
     
-    print(depthOfK(T,16)) # 1
+    start_time = time.time()
+    print(depthOfK(T,16)) # 6
+    end_time = time.time()
+    print('Total Time:', end_time - start_time)
     print(depthOfK(T,58)) # -1
     print(depthOfK(T2,0)) # 3
     print(depthOfK(T_empty,10)) # -1
     print()
     
     fig,ax = plt.subplots()
+    start_time = time.time()
     draw(T,ax)
+    end_time = time.time()
+    print('Total Time:', end_time - start_time)
     fig,ax = plt.subplots()
     draw(T2,ax)
     fig,ax = plt.subplots()
