@@ -183,31 +183,31 @@ if __name__ == "__main__":
     start_time = time.time()
     print(size(T)) # 
     end_time = time.time()
-    print('Total Time:', end_time - start_time)
+    print('Size Total Time:', end_time - start_time)
     print(size(T2)) # 7
     print(size(T_empty)) # 0
     print()
     
     start_time = time.time()
-    print(maximum(T)) # 
-    end_time = time.time()
-    print('Total Time:', end_time - start_time)
-    print(maximum(T2)) # 6
-    print(maximum(T_empty)) # None
-    print()
-    
-    start_time = time.time()
     print(minimum(T)) # 
     end_time = time.time()
-    print('Total Time:', end_time - start_time)
+    print('Minimum Total Time:', end_time - start_time)
     print(minimum(T2)) # 0
     print(minimum(T_empty)) # None
     print()
     
     start_time = time.time()
+    print(maximum(T)) # 
+    end_time = time.time()
+    print('Maximum Total Time:', end_time - start_time)
+    print(maximum(T2)) # 6
+    print(maximum(T_empty)) # None
+    print()
+    
+    start_time = time.time()
     print(height(T))# 
     end_time = time.time()
-    print('Total Time:', end_time - start_time)
+    print('height Total Time:', end_time - start_time)
     print(height(T2)) # 3
     print(height(T_empty)) # -1
     print()
@@ -215,7 +215,7 @@ if __name__ == "__main__":
     start_time = time.time()
     print(inTree(T,8)) # 
     end_time = time.time()
-    print('Total Time:', end_time - start_time)
+    print('inTree Total Time:', end_time - start_time)
     print(inTree(T,0))  # False
     print(inTree(T2,1)) # True
     print(inTree(T_empty,14)) # False
@@ -225,14 +225,14 @@ if __name__ == "__main__":
     printByLevel(T)
     print()
     end_time = time.time()
-    print('Total Time:', end_time - start_time)
+    print('printByLevel Total Time:', end_time - start_time)
     printByLevel(T2)
     print()
     
     start_time = time.time()
     print(tree2List(T)) # [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15....,49]
     end_time = time.time()
-    print('Total Time:', end_time - start_time)
+    print('tree2List Total Time:', end_time - start_time)
     print(tree2List(T2)) # [0 1 2 3 4 5 6]
     print(tree2List(T_empty)) # []
     print()
@@ -241,7 +241,7 @@ if __name__ == "__main__":
     leaves(T) # 0 4 7 10 13 15 18 21 24 28 31 33 35 39 41 43 45 49 
     print()
     end_time = time.time()
-    print('Total Time:', end_time - start_time)
+    print('leaves Total Time:', end_time - start_time)
     leaves(T2) # 0 4 6
     print()
     leaves(T_empty)
@@ -250,7 +250,7 @@ if __name__ == "__main__":
     start_time = time.time()
     print(itemsAtDepthD(T,3)) # [0,3,6,9,25,34,46]
     end_time = time.time()
-    print('Total Time:', end_time - start_time)
+    print('itemsAtDepthD Total Time:', end_time - start_time)
     print(itemsAtDepthD(T,2)) # [1,5,19,42]
     print(itemsAtDepthD(T2,1)) # [2,5]
     print(itemsAtDepthD(T2,0)) # [3]
@@ -260,7 +260,7 @@ if __name__ == "__main__":
     start_time = time.time()
     print(depthOfK(T,16)) # 6
     end_time = time.time()
-    print('Total Time:', end_time - start_time)
+    print('DepthOfK Total Time:', end_time - start_time)
     print(depthOfK(T,58)) # -1
     print(depthOfK(T2,0)) # 3
     print(depthOfK(T_empty,10)) # -1
@@ -270,7 +270,7 @@ if __name__ == "__main__":
     start_time = time.time()
     draw(T,ax)
     end_time = time.time()
-    print('Total Time:', end_time - start_time)
+    print('Draw Total Time:', end_time - start_time)
     fig,ax = plt.subplots()
     draw(T2,ax)
     fig,ax = plt.subplots()
