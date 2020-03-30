@@ -39,6 +39,8 @@ def minimum(T):
     #iterate to the leftmost part of the tree and return the leaf
     if T[1] is None and T[2] is None:
         return T[0]
+    if T[1] is None and T[2] is not None:
+        return minimum(T[2])
     
     return minimum(T[1])
 #--------------------------------
@@ -49,6 +51,8 @@ def maximum(T):
     # iterate to the rightmost part of the tree
     if T[1] is None and T[2] is None:
         return T[0]
+    if T[2] is None and T[1] is not None:
+        return maximum(T[1])
     
     return maximum(T[2])
 #--------------------------------
